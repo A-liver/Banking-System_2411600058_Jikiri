@@ -1,0 +1,274 @@
+
+:root {
+    --paper: #f5f0e5;
+    --surface: #fffdf7;
+    --ink: #34251d;
+    --muted: #6f5c4e;
+    --rule: #d9cdbb;
+    --copper: #784129;
+    --success: #355c43;
+    --success-bg: #e5eee5;
+    --error: #8b3027;
+    --error-bg: #fbe5e2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2 {
+    max-width: 685px;
+    margin: 0 auto 18px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+nav,
+.stats,
+.status,
+form,
+.table-wrap,
+.alert,
+.error-list,
+.success-message {
+    width: 100%;
+    max-width: 685px;
+    margin: 0 auto 14px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--copper);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--copper);
+    text-underline-offset: 5px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--copper);
+    outline-offset: 2px;
+}
+
+/* Dashboard statistics */
+
+.stats,
+form,
+.table-wrap {
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+}
+
+.stat {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.stat:last-child {
+    border-bottom: 0;
+}
+
+.label {
+    margin: 0 0 4px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.value {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+    font-variant-numeric: tabular-nums;
+}
+
+.status {
+    color: var(--muted);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* Transaction table */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+}
+
+th {
+    background: #eee5d5;
+    color: var(--ink);
+    font-size: 14px;
+}
+
+td {
+    overflow-wrap: anywhere;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+tbody tr:hover {
+    background: #f8f1e5;
+}
+
+/* Transaction form */
+
+form label {
+    display: block;
+    margin: 0 0 4px;
+    font-size: 15px;
+}
+
+form input,
+form select,
+form textarea {
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    margin: 0 0 14px;
+    padding: 9px 10px;
+    border: 1px solid #bcae9b;
+    border-radius: 4px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+}
+
+form textarea {
+    min-height: 72px;
+    resize: vertical;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--copper);
+}
+
+button[type="submit"] {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 4px;
+    background: var(--copper);
+    color: #fffdf7;
+    font: inherit;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: #5f321f;
+}
+
+/* Feedback messages */
+
+.alert,
+.error-list,
+.success-message {
+    padding: 10px 12px;
+    border-radius: 4px;
+    overflow-wrap: anywhere;
+}
+
+.alert,
+.error-list {
+    background: var(--error-bg);
+    color: var(--error);
+}
+
+.success-message {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.error-list {
+    padding-left: 32px;
+}
+
+/* Pagination */
+
+nav[aria-label="Pagination"] {
+    justify-content: center;
+}
+
+nav[aria-label="Pagination"] a,
+nav[aria-label="Pagination"] span {
+    padding: 6px 10px;
+}
+
+/* Small screens */
+
+@media (max-width: 520px) {
+    body {
+        padding: 16px;
+    }
+
+    .stats,
+    form,
+    .table-wrap {
+        padding: 14px;
+    }
+
+    nav {
+        gap: 4px 14px;
+    }
+
+    .value {
+        font-size: 22px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
